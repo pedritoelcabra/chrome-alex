@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Alex for Chrome",
+  "description": "This extension helps you catch insensitive, inconsiderate writing.",
+  "version": "0.0.1",
+
+  "browser_action": {
+    "default_icon": "gfx/icon.png",
+    "default_popup": "html/main_popup.html"
+  },
+  "permissions":  [
+    "tabs", "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/alex.min.js", "js/jquery-3.1.1.min.js", "js/hilitor.js", "js/jquery.qtip.min.js"],
+      "css": ["css/jquery.qtip.min.css"]
+    }
+  ]
+}
